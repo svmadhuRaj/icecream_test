@@ -1,7 +1,7 @@
 'use strict';
 const service = require('./service')
 const options = {
-    url: 'https://api.yelp.com:443/v3/businesses/search?term=icecream&location=Alpharetta,30005&sort_by=rating&limit=5',
+    url: 'https://api.yelp.com/v3/businesses/search?term=icecream&location=Alpharetta,30005&sort_by=rating&limit=5',
     headers:{
         'Authorization':'Bearer Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx '
     }
@@ -11,7 +11,7 @@ const options = {
     const businessdata = apidata.businesses;
     businessdata.map(s=>{
       let reviewOptions ={
-        url:'https://api.yelp.com:443/v3/businesses/'+s.id+'/reviews',
+        url:'https://api.yelp.com/v3/businesses/'+s.id+'/reviews',
         headers:{
           'Authorization':'Bearer Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx '
         }
