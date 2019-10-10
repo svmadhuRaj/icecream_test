@@ -1,0 +1,14 @@
+{
+  "name": "adptest",
+  "version": "1.0.0",
+  "description": "Module getting Data from YELP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhu raj",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
