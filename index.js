@@ -11,7 +11,7 @@ const options = {
     const businessdata = apidata.businesses;
     businessdata.map(s=>{
       let reviewOptions ={
-        url:'https://api.yelp.com/v3/businesses/'+s.id+'/reviews',
+        url:`https://api.yelp.com/v3/businesses/${s.id}/reviews`,
         headers:{
           'Authorization':'Bearer Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx '
         }
@@ -19,14 +19,13 @@ const options = {
 
       service.getServiceData(reviewOptions).then(function(apidata){
         s.review=apidata.reviews;
-        console.log('NAME : '+s.name+ '\n ADDRESS: '+s.location.address1 +'\n CITY: '+s.location.city +'\n REVIEWER NAME: '+s.review[0].user.name +'\n REVIEW: '
-        +s.review[0].text +'\n\n' );
+        console.log(`NAME : ${s.name} \n ADDRESS: ${s.location.address1} \n CITY: ${s.location.city} \n REVIEWER NAME: ${s.review[0].user.name} \n REVIEW: ${s.review[0].text} \n\n` );
       },function(error){
-        console.log('error in getting reviews'+error);
+        console.log(`error in getting reviews ${error}`);
       })
     });
 
   },function(error){
-    console.log('Error in getting businesses'+error);
+    console.log(`Error in getting businesses ${error}`);
   })
 
